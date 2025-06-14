@@ -23,8 +23,7 @@ pipeline {
       environment {
        
         SONAR_URL = "http://3.85.110.27:9000"
-            JAVA_HOME = '/usr/lib/jvm/java-17-openjdk-amd64'
-            PATH = "${JAVA_HOME}/bin:${PATH}"
+            
       }
       steps {
         withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
