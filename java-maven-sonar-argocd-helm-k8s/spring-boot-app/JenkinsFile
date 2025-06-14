@@ -1,14 +1,15 @@
 pipeline {
   agent {
     docker {
-      image 'abhishekf5/maven-abhishek-docker-agent:v1'
+      //image 'abhishekf5/maven-abhishek-docker-agent:v1'
+       image 'harishkodimurthi/springboot-java17-app:v1'
       args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
     }
   }
 
   environment {
     SONAR_URL = "http://3.85.110.27:9000"
-    DOCKER_IMAGE = "abhishekf5/ultimate-cicd:${BUILD_NUMBER}"
+    DOCKER_IMAGE = "harishkodimurthi/ultimate-cicd:${BUILD_NUMBER}"
     GIT_REPO_NAME = "Jenkins-Zero-To-Hero"
     GIT_USER_NAME = "KodimurthiHarish"
   }
