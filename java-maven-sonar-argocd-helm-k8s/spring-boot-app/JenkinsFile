@@ -11,7 +11,7 @@ pipeline {
    }
 
     environment {
-     JAVA_HOME = "${tool 'jdk17'}"
+     JAVA_HOME = "${tool 'JDK 17'}"
      PATH = "${JAVA_HOME}/bin:${env.PATH}"
    }
   stages {
