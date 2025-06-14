@@ -7,11 +7,11 @@ pipeline {
     }
   }
     tools {
-      jdk 'JDK 17' // use the name you configured in Global Tools
+      jdk 'jdk17' // use the name you configured in Global Tools
    }
 
     environment {
-     JAVA_HOME = "${tool 'JDK 17'}"
+     JAVA_HOME = "${tool 'jdk17'}"
      PATH = "${JAVA_HOME}/bin:${env.PATH}"
    }
   stages {
