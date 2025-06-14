@@ -22,7 +22,7 @@ pipeline {
     stage('Static Code Analysis') {
       environment {
         export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
-         export PATH=$JAVA_HOME/bin:$PATH
+        export PATH=$JAVA_HOME/bin:$PATH
         SONAR_URL = "http://3.85.110.27:9000"
             
       }
