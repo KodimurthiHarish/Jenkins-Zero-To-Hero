@@ -1,13 +1,14 @@
-# You can change this base image to anything else
-# But make sure to use the correct version of Java
+# Base image with Java 17 (alpine version for smaller size)
 FROM adoptopenjdk/openjdk17:alpine-jre
 
-# Simply the artifact path
+# Use the JAR built from Maven (keep your artifact name the same)
 ARG artifact=target/spring-boot-web.jar
 
+# Set working directory
 WORKDIR /opt/app
 
+# Copy the jar to container with the same name
 COPY ${artifact} app.jar
 
-# This should not be changed
-ENTRYPOINT ["java","-jar","app.jar"]
+# Entry point for running the Spring Boot app
+ENTRYPOINT ["java", "-jar", "app.jar"]
